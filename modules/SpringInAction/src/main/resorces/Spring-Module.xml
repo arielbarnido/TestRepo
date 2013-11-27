@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+		
+		<bean id="helloBean" class="com.spring.tutor.HelloWorld">
+			<property name="name" value="Ariel" />
+			<property name="nameList">
+				<list>
+					<value>a</value>
+					<value>b</value>
+					<value>b</value>
+					
+				</list>
+			</property>
+			<property name="keyList">
+				<set>
+					<value>1</value>
+					<value>2</value>
+					<value>2</value>
+				</set>
+			</property>
+			
+			<property name="playerMap">
+				<map>
+					<entry key="BBALL" value-ref="basketballPlayer"/>
+					<entry key="TENNIS" value-ref="tennisPlayer"/>
+				</map>
+			</property>
+			
+			
+			<property name="teams">
+				<props>
+					<prop key="TEAM1">HEAT</prop>
+					<prop key="TEAM2">WARRIORS</prop>
+					<prop key="TEAM3">WOLVES</prop>
+				</props>
+			</property>
+			
+			
+		</bean>
+		
+		
+		<bean id="basketballPlayer" class="com.spring.tutor.bo.BasketballPlayer">
+			<property name="type" value="Basketball"/>
+		</bean>
+		
+		<bean id="tennisPlayer" class="com.spring.tutor.bo.TennisPlayer">
+			<property name="type" value="Tennis"/>
+		</bean>
+		
+
+</beans>
